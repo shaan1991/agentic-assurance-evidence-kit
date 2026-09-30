@@ -1,0 +1,40 @@
+{
+  "version": "0.1-demo",
+  "status": "DEMO ONLY",
+  "controls": {
+    "16": {
+      "control_id": "ACN-COST-001",
+      "metric": "Total tokens per run",
+      "limit": 50000,
+      "exception_tolerance": "Zero calls over the cap may run without a block record",
+      "measurement_basis": "Token counts per call",
+      "owner": "demo",
+      "declared_date": "2026-09-30"
+    },
+    "7": {
+      "control_id": "AIA-LOG-001",
+      "metric": "Recorded versus expected events per run",
+      "expected_events": [
+        "fault_received",
+        "diagnosis_done",
+        "fix_applied",
+        "customer_notified"
+      ],
+      "max_gap_seconds": 300,
+      "exception_tolerance": "Zero missing events, zero violating gaps",
+      "measurement_basis": "Event records",
+      "owner": "demo",
+      "declared_date": "2026-09-30"
+    },
+    "9": {
+      "control_id": "AIA-ARC-006",
+      "metric": "diagnosis_match_rate per window",
+      "baseline": 0.92,
+      "drift_limit": 0.1,
+      "exception_tolerance": "Zero breached windows without an owner alert",
+      "measurement_basis": "Scheduled monitor, one record per window",
+      "owner": "demo-owner",
+      "declared_date": "2026-09-30"
+    }
+  }
+}
