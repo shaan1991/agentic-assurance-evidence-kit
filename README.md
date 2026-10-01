@@ -46,3 +46,25 @@ Ask the tool about a control and a run:
 3. Port the wrappers to the real model gateway and event stream.
 4. Produce the satisfied and violated runs. Keep every record.
 5. Record the gaps honestly. The gap list is scored.
+
+## Event facts, confirmed in the Sep 30 immersion webinar
+
+- Prebuilt code and tools are explicitly allowed. The organisers said you can
+  prepare and use your own code. This repo is the prebuilt toolkit.
+- NVIDIA Nemotron models are required. A solution is only valid if the agents
+  use Nemotron, served on AWS Bedrock. The four flavours: Nano 30B
+  (efficient, medium tasks), Omni (multimodal), Super 120B (better
+  reasoning), Ultra (frontier reasoning, complex orchestration). At the
+  event, the wrappers get ported to call Nemotron through the event's Agent
+  Gateway. Nemotron may also be used for adversarial testing of the controls.
+- The ServiceNow AI Control Tower to AWS integration is mandatory and its
+  use is part of the judging criteria. The event provides a guided flow in
+  Workshop Studio: in AICT, open the integration tab, use the default Amazon
+  connector, and fill in the access key ID, secret access key, management
+  account ID, SDC assume role, and CloudWatch workgroup. Name connectors and
+  agents with the team name. AICT is shared by all teams, not multi tenant.
+- The judges speak four component names. This is how they map to the kit:
+  the control register is the threshold declaration document; the evaluator
+  is the control logic invoked at the enforcement point; the evidence ledger
+  is the records plus the JSONL evidence file, which never interprets; the
+  query tool is `cli/control_test.py`.
