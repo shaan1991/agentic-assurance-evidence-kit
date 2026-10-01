@@ -24,3 +24,18 @@ stay untouched.
 Trust model: the ledger is plain JSONL anyone can read. Its trust does not
 depend on the tool that wrote it. No signing, no hashing, no Merkle trees.
 Gaps are recorded, never silent.
+
+Vocabulary the judges use, mapped to this kit:
+
+    Control register   thresholds/thresholds.template.json
+                       the declaration document, dated before any assessed run
+    Evaluator          controls/spend_cap.py, coverage.py, drift.py
+                       invoked at the enforcement point, asks allowed or not
+    Evidence ledger    records/ plus evidence/
+                       takes records, chains them, never interprets
+    Query tool         cli/control_test.py
+                       a judge names a control and a run, the tool answers
+
+Enforcement points worth covering beyond the gateway: tool calls, the human
+approval queue, and data access. The architecture should work if it is moved
+off the gateway, not only in the request path.
